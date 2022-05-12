@@ -6,9 +6,11 @@ const morgan = require('morgan')
 const app = express()
 
 // Settings
+require('dotenv').config()
+
 app.set('port', process.env.PORT || 5000)
 
-mongoose.connect('mongodb://localhost/movies')
+mongoose.connect(process.env.MONGOO_DB)
 
 app.use(cors())
 
