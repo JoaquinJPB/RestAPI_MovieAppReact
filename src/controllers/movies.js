@@ -20,7 +20,6 @@ const findAllMovies = (req, res) => {
 const findById = (req, res) => {
     Movie.findById(req.params.id)
         .then(movie => {
-            console.log({movie})
             res.json(movie)
         })
         .catch(error => res.sendStatus(404).send(error))

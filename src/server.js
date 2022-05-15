@@ -7,15 +7,12 @@ const app = express()
 
 // Settings
 require('dotenv').config()
-
 app.set('port', process.env.PORT || 5000)
-
 mongoose.connect(process.env.MONGOO_DB)
-
-app.use(cors())
 
 // Middlewares
 app.use(morgan('dev'))
+app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
